@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 
-/* :root {
-} */
+:root {
+  --index: calc(1vw + 1vh)
+}
 
 @font-face {
   font-family: raleway_f;
@@ -20,7 +21,6 @@
 
 body {
   background-color: #010101;
-  color: #fff;
   font-family: raleway_f, sans-serif;
   line-height: 1.55;
 }
@@ -45,10 +45,43 @@ body {
   position: absolute;
   background-size: cover;
   background-position: center;
+  will-change: transform;
+  z-index: 2;
 }
 
 .layers_base {
+  transform: translate3d(0, calc(var(--scrollTop)/1.4), 0);
+  z-index: 0;
+}
+
+.layers_middle {
+  transform: translate3d(0, calc(var(--scrollTop)/2.3), 0);
+}
+
+.layers_front {
+  transform: translate3d(0, calc(var(--scrollTop)/7), 0);
+}
+
+.layers_title {
+  font-size: calc(var(--index) * 2.5);
+  letter-spacing: calc(var(--index) / 2.25);
+
+}
+
+.layers_caption {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * (-0.75) );
+}
+
+.layer_header {
+  z-index: 1;
   transform: translate3d(0, calc(var(--scrollTop)/2), 0);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #e7e6e0;
+  text-shadow: 0 0 15px #9e7d35;
 }
 
 .main_article {
