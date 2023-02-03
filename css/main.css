@@ -133,9 +133,9 @@ body {
   will-change: transform;
 }
 
-.content {
+/* .content {
   will-change: transform;
-}
+} */
 
 .copy {
   position: absolute;
